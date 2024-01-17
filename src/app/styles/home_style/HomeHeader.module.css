@@ -1,0 +1,25 @@
+.HomeHeaderContainer {
+    display: flex;
+    justify-content: space-around;
+    padding: 15px;
+    background-color: #C56AFD;
+}
+
+.HomeHeaderLogo,
+.HomeHeaderInput, 
+.HomeHeaderImages {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.HomeHeaderInput > input[type=search]{
+    padding: 5px;
+    width: 100%
+}
+
+.HomeHeaderImages > img{
+    width: 40px;
+    margin: 0 15px 0 15px;
+}
