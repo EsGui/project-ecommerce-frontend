@@ -22,4 +22,5 @@
 .HomeHeaderImages > img{
     width: 40px;
     margin: 0 15px 0 15px;
+    cursor: pointer;
 }

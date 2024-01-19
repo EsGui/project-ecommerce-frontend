@@ -1,0 +1,35 @@
+.LoginUserContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh
+}
+
+.LoginUserField {
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 50%;
+    height: 60%;
+}
+
+.LoginUserField input {
+    margin-bottom: 15px;
+    width: 50%;
+    padding: 10px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.LoginUserField button {
+    width: 50%;
+    padding: 10px;
+    cursor: pointer;
+    background-color: #C56AFD;
+    color: white;
+    font-weight: bold;
+    font-size: 15px
+}
+

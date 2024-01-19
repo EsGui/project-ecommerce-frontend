@@ -1,0 +1,11 @@
+.SlideContainer {
+    display: flex;
+    align-items: center;
+    border: 1px solid black;
+    width: 50%;
+    overflow-y: hidden;
+}
+
+.SlideContainer > img{
+    height: 550px;
+}
