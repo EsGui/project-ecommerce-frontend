@@ -1,6 +1,8 @@
 import MyContext from "./MyContext";
 
 export default function Logic({ children }) {
+    // Requisição do cadastro
+
     const obj = {
 
     }

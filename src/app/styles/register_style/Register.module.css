@@ -1,0 +1,33 @@
+.DivRegisterContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh
+}
+
+.DivRegisterData {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 50%;
+    height: 90%;
+    border: 1px solid black
+}
+
+.DivRegisterData input {
+    padding: 15px;
+    width: 50%;
+    margin-bottom: 15px;
+    font-size: 15px;
+}
+
+.DivRegisterData button {
+    padding: 15px;
+    width: 50%;
+    background-color: #C56AFD;
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer
+}
