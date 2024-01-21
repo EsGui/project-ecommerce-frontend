@@ -1,5 +1,6 @@
 "use client"
 
+import Link from 'next/link'
 import styles from '../../styles/home_style/HomeHeader.module.css'
 import { useRouter } from 'next/navigation'
 
@@ -8,7 +9,12 @@ export default function HomeHeader() {
 
     return (
         <div className={ styles.HomeHeaderContainer }>
-            <div className={ styles.HomeHeaderLogo }></div>
+            <div className={ styles.HomeHeaderLogo }>
+                <Link style={{
+                    textDecoration: "none",
+                    color: "white",
+                }}  href="/"><h3>e-commerce</h3></Link>
+            </div>
             <div className={ styles.HomeHeaderInput }>
                 <input type="search" placeholder="Pesquisa"/>
             </div>

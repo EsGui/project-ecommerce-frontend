@@ -12,8 +12,8 @@ export default function Register() {
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
 
-    const register = async () => {
-        await axios({
+    const register = () => {
+        axios({
             method: "post",
             url: "http://localhost:3001/cadastro",
             data: {
@@ -24,7 +24,8 @@ export default function Register() {
                 password,
                 confirmPassword
             }
-        })
+        }).then((response) => alert(response.data.message))
+        .catch((error) => alert(error.response.data.message));
     }
 
     return (
