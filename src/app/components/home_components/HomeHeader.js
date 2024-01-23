@@ -29,11 +29,18 @@ export default function HomeHeader() {
                 <img src="http://localhost:3000/icons/carrinho-de-compras.png" alt="carrinho" />
                 {
                     dataUser ? (
-                        <img onClick={ () => {{
-                            setRender((prevState) => !prevState);
-                            localStorage.removeItem("tokenUser");
-                            router.push("/")
-                        }} } src="http://localhost:3000/icons/conecte-se.png" alt="Sair da conta" />
+                        <>
+                            <img onClick={ () => {{
+                                setRender((prevState) => !prevState);
+                                localStorage.removeItem("tokenUser");
+                                router.push("/")
+                            }} } src="http://localhost:3000/icons/conecte-se.png" alt="Sair da conta" />
+                            <Link style={{
+                                textDecoration: "none",
+                                color: "white",
+                                fontWeight: "bold"
+                            }} href="/painel-user">{ dataUser.firstName }</Link>
+                        </>
                     ) : (
                         <img onClick={ () => router.push("/login")} src="http://localhost:3000/icons/do-utilizador.png" alt="gravatar" />
                     )

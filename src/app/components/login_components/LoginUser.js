@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import styles from '../../styles/login_style/LoginUser.module.css'
 import axios from 'axios'
-import { useContext, useEffect, useState } from 'react'
+import { useContext, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import MyContext from '@/app/context/MyContext'
 
