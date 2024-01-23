@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import styles from '../../styles/register_style/Register.module.css'
 import axios from 'axios';
 
@@ -35,8 +35,8 @@ export default function Register() {
                 <input onChange={ ({ target }) => setLastName(target.value) } type="text" placeholder="Digite seu sobrenome" />
                 <input onChange={ ({ target }) => setUserName(target.value) } type="text" placeholder="Digite seu nome de usuário" />
                 <input onChange={ ({ target }) => setEmail(target.value) } type="text" placeholder="Digite email" />
-                <input onChange={ ({ target }) => setPassword(target.value) } type="text" placeholder="Digite sua senha" />
-                <input onChange={ ({ target }) => setConfirmPassword(target.value) } type="text" placeholder="Confirme sua senha" />
+                <input onChange={ ({ target }) => setPassword(target.value) } type="password" placeholder="Digite sua senha" />
+                <input onChange={ ({ target }) => setConfirmPassword(target.value) } type="password" placeholder="Confirme sua senha" />
                 <button onClick={ register } type="button">Cadastrar</button>
             </div>
         </div>

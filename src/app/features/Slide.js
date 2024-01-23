@@ -21,8 +21,8 @@ export default function Slide() {
     return (
         <div ref={ carousel } className={ styles.SlideContainer }>
             {
-                images.map(({ image }) => (
-                    <img src={ image } />
+                images.map(({ image }, index) => (
+                    <img key={index} src={ image } alt="imagens banner" />
                 ))
             }
         </div>
