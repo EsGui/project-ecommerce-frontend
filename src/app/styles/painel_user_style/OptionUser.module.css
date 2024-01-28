@@ -37,16 +37,49 @@
     cursor: pointer
 }
 
-/*
-.DivOptionUser {
+.DivInputs {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     border: 1px solid black;
-    height: 70vh;
-    padding: 40px
+    height: 100%;
 }
 
-.DivPainelUser {
-    border: 1px solid black;
-    height: 70vh;
-    padding: 40px
+.DivInputs input {
+    padding: 15px;
+    width: 80%;
+    margin-bottom: 40px;
 }
+
+.DivInputs button {
+    padding: 10px;
+    width: 20%;
+    border-radius: 5px;
+    border: none;
+    background-color: #C56AFD;
+    cursor: pointer;
+    color: white
+}
+
+.DivInputs h1 {
+    margin-bottom: 10px;
+}
+
+.DivProductsAdverts img {
+    width: 200px;
+}
+
+/*
+    .DivOptionUser {
+        border: 1px solid black;
+        height: 70vh;
+        padding: 40px
+    }
+
+    .DivPainelUser {
+        border: 1px solid black;
+        height: 70vh;
+        padding: 40px
+    }
 */

@@ -6,9 +6,12 @@ import axios from "axios";
 
 export default function Logic({ children }) {
     const [dataUser, setDataUser] = useState(null);
+    const [products, setProducts] = useState([]);
     const [render, setRender] = useState(false);
     // Requisição do cadastro
-    console.log(dataUser);
+    console.log("Usuário logado ===>>", dataUser);
+
+    console.log("Produtos ===>>", products)
 
     useEffect(() => {
         const requestUser = () => {
@@ -27,11 +30,21 @@ export default function Logic({ children }) {
             }
         }
         requestUser();
-    }, [render])
+    }, [render]);
+
+    useEffect(() => {
+        const requestProducts = () => {
+            axios("http://localhost:3001/list-product")
+            .then((response) => setProducts(response.data.products))
+            .catch((error) => console.log(error));
+        }
+        requestProducts();
+    }, []);
 
     const obj = {
         dataUser,
         setRender,
+        products,
         render
     }
 
