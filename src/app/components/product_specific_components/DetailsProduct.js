@@ -12,6 +12,15 @@ export default function DetailsProduct({ slug }) {
 
     // console.log("slug ===>>", slug.replace(/%20/gi, "-"));
 
+    const saveProductCart = async () => {
+        await axios.post({
+            url: "http://localhost:3001/cart",
+            body: {
+
+            }
+        })
+    }
+
     useEffect(() => {
         const requestProductSpecific = async() => {
             if (slug) {
@@ -43,6 +52,11 @@ export default function DetailsProduct({ slug }) {
                         <div className={ styles.DivDescription }>
                             <p>{ product.description }</p>
                         </div>
+                        <div className={ styles.DivButton }>
+                            <button type="button">Comprar</button>
+                            <button type="button">Adicionar ao carrinho</button>
+                            <p>Vendido por: { product.userProduct.userName }</p>
+                        </div>        
                     </div>
                 ) : (
                     <div>

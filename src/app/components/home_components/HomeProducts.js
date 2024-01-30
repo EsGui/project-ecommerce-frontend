@@ -31,7 +31,7 @@ export default function HomeProducts() {
                             <p>{ price }</p>
                             <div className={ styles.DivUserProduct }>
                                 <p>Publicado por: { userProduct.userName }</p>
-                            </div>             
+                            </div>     
                         </div>
                     )) : (
                         <h1>Loading...</h1>
