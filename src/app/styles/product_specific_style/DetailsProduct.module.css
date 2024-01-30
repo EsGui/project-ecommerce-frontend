@@ -1,0 +1,37 @@
+.DivComponent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    height: 100vh
+}
+
+.DivContainer {
+    display: flex;
+    justify-content: center;
+    border: 1px solid black;
+    height: 70%;
+    width: 70%;
+}
+
+.DivProduct {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid black;
+    height: 100%;
+    width: 40%
+}
+
+.DivProduct img {
+    width: 500px;
+}
+
+.DivDescription {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    width: 60%
+}

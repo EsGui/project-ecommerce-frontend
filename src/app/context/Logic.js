@@ -6,12 +6,12 @@ import axios from "axios";
 
 export default function Logic({ children }) {
     const [dataUser, setDataUser] = useState(null);
-    const [products, setProducts] = useState([]);
+    const [products, setProducts] = useState(null);
     const [render, setRender] = useState(false);
     // Requisição do cadastro
-    console.log("Usuário logado ===>>", dataUser);
+    // console.log("Usuário logado ===>>", dataUser);
 
-    console.log("Produtos ===>>", products)
+    // console.log("Produtos ===>>", products)
 
     useEffect(() => {
         const requestUser = () => {
