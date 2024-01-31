@@ -26,7 +26,7 @@ export default function HomeHeader() {
                 <input type="search" placeholder="Pesquisa"/>
             </div>
             <div className={ styles.HomeHeaderImages }>
-                <img src="http://localhost:3000/icons/carrinho-de-compras.png" alt="carrinho" />
+                <img onClick={ () => router.push("/cart")} src="http://localhost:3000/icons/carrinho-de-compras.png" alt="carrinho" />
                 {
                     dataUser ? (
                         <>
