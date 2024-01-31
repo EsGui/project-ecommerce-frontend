@@ -16,8 +16,8 @@ export default function LoginUser() {
     const [password, setPassword] = useState("");
     const router = useRouter();
 
-    const authUser = () => {
-        axios({
+    const authUser = async () => {
+        await axios({
             method: 'post',
             url: "http://localhost:3001/login",
             data: {

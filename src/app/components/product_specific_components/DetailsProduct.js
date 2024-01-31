@@ -7,7 +7,8 @@ import MyContext from "@/app/context/MyContext";
 
 export default function DetailsProduct({ slug }) {
     const {
-        dataUser
+        dataUser,
+        setRender,
     } = useContext(MyContext)
     const [product, setProduct] = useState(null);
 
@@ -15,8 +16,8 @@ export default function DetailsProduct({ slug }) {
 
     // console.log("slug ===>>", slug.replace(/%20/gi, "-"));
 
-    const saveProductCart = () => {
-        axios({
+    const saveProductCart = async () => {
+        await axios({
             url: "http://localhost:3001/cart",
             method: "post",
             data: {
@@ -28,13 +29,14 @@ export default function DetailsProduct({ slug }) {
                 category: product.category,
             }
         })
-        console.log("cliquei")
+        console.log("cliquei");
+        setRender((prevState) => !prevState);
     }
 
     useEffect(() => {
         const requestProductSpecific = async () => {
             if (slug) {
-                axios({
+                await axios({
                     method: "post",
                     url: "http://localhost:3001/list-product-especific",
                     data: {

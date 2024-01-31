@@ -11,13 +11,11 @@ export default function Logic({ children }) {
     // Requisição do cadastro
     console.log("Usuário logado ===>>", dataUser);
 
-    // console.log("Produtos ===>>", products)
-
     useEffect(() => {
-        const requestUser = () => {
+        const requestUser = async () => {
             const token = localStorage.getItem("tokenUser");
             if (token) {
-                axios({
+                await axios({
                     method: "post",
                     url: "http://localhost:3001/persist-login",
                     headers: {
@@ -33,8 +31,8 @@ export default function Logic({ children }) {
     }, [render]);
 
     useEffect(() => {
-        const requestProducts = () => {
-            axios("http://localhost:3001/list-product")
+        const requestProducts = async () => {
+            await axios("http://localhost:3001/list-product")
             .then((response) => setProducts(response.data.products))
             .catch((error) => console.log(error));
         }

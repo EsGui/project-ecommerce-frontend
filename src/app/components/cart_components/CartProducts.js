@@ -1,25 +1,27 @@
 "use client"
 
 import axios from "axios";
-import { useContext, useEffect, useState } from "react"
+import { useContext, useState } from "react"
 import styles from '../../styles/cart_style/CartProducts.module.css'
 import MyContext from "@/app/context/MyContext";
 
 export default function CartProducts() {
     const {
-        dataUser
-    } = useContext(MyContext)
-    const [productsCart, setProductsCart] = useState([]);
-    console.log(productsCart)
+        dataUser,
+        setRender,
+    } = useContext(MyContext);
 
-    useEffect(() => {
-        const requestProductsCart = async () => {
-            axios("http://localhost:3001/list-cart")
-            .then((response) => setProductsCart(response.data.productsInCart))
-            .catch((error) => console.log(error));
-        }
-        requestProductsCart();
-    }, []);
+    const deleteProduct = async (id) => {
+        console.log(id);
+        await axios({
+            url: "http://localhost:3001/delete-cart",
+            method: "post",
+            data: {
+                id
+            }
+        });
+        setRender((prevState) => !prevState)
+    }
 
     return (
         <>
@@ -31,6 +33,7 @@ export default function CartProducts() {
                 <div className={ styles.DivContainerCartProduct }>
                     {
                         dataUser && dataUser.userProductCart.map(({
+                            id,
                             name,
                             image,
                             price,
@@ -46,7 +49,7 @@ export default function CartProducts() {
                                     <p>{category}</p>
                                 </div>
                                 <div className={ styles.DivButtonIcon }>
-                                    <input type="image" src="http://localhost:3000/icons/remove.png" />
+                                    <input onClick={ () => deleteProduct(id) } type="image" src="http://localhost:3000/icons/remove.png" />
                                 </div>
                             </div>
                         ))
