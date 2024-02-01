@@ -9,7 +9,7 @@ export default function HomeProducts() {
     const router = useRouter();
     
     const {
-        products
+        products,
     } = useContext(MyContext);
 
     return (
@@ -17,6 +17,7 @@ export default function HomeProducts() {
             <div className={ styles.DivControlHomeProducts }>
                 {
                     products ? products.map(({
+                        id,
                         name, 
                         image, 
                         price,
@@ -24,7 +25,8 @@ export default function HomeProducts() {
                     }, index) => (
                         <div key={index} onClick={ () => {
                             const formatName = name.toLowerCase();
-                            router.push(`http://localhost:3000/product-especific/${ formatName.replace(/ /gi, "-") }`)} 
+                            router.push(`http://localhost:3000/product-especific/${ formatName.replace(/ /gi, "-") }/${ id }`)
+                        }
                         } className={ styles.IndividualProduct }>
                             <img src={ image } alt={ name } />
                             <p>{ name }</p>

@@ -13,6 +13,7 @@ export default function DetailsProduct({ slug }) {
     const [product, setProduct] = useState(null);
 
     console.log("Produto especifico ===>>>", product)
+    console.log("slug ===>>>", slug)
 
     // console.log("slug ===>>", slug.replace(/%20/gi, "-"));
 
@@ -40,7 +41,8 @@ export default function DetailsProduct({ slug }) {
                     method: "post",
                     url: "http://localhost:3001/list-product-especific",
                     data: {
-                        slug,
+                        id: Number(slug[1]),
+                        slug: slug[0]
                     }
                 }).then((response) => setProduct(response.data.product))
                 .catch((error) => {

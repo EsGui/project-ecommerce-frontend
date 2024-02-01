@@ -32,7 +32,7 @@ export default function CartProducts() {
                 </div>
                 <div className={ styles.DivContainerCartProduct }>
                     {
-                        dataUser && dataUser.userProductCart.map(({
+                        dataUser && dataUser.userProductCart.length > 0 ? dataUser.userProductCart.map(({
                             id,
                             name,
                             image,
@@ -52,7 +52,12 @@ export default function CartProducts() {
                                     <input onClick={ () => deleteProduct(id) } type="image" src="http://localhost:3000/icons/remove.png" />
                                 </div>
                             </div>
-                        ))
+                        )) : (
+                            <>
+                                <img src="http://localhost:3000/icons/cart-empty.png" />
+                                <h1>Sem produtos por aqui!</h1>
+                            </>
+                        )
                     }
                 </div>
             </div>

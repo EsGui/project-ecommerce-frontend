@@ -66,6 +66,21 @@
     margin-bottom: 10px;
 }
 
+.DivProductsAdverts {
+    cursor: pointer;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgb(245, 245, 245);
+}
+
+.DivContainerProductAdverts {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
 .DivProductsAdverts img {
     width: 200px;
 }

@@ -6,7 +6,6 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    height: 100vh;
     border-radius: 5px;
     padding: 20px;
     background-color: rgb(245, 245, 245);

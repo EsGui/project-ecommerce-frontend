@@ -43,7 +43,7 @@ export default function Logic({ children }) {
         dataUser,
         setRender,
         products,
-        render
+        render,
     }
 
     return (
