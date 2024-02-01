@@ -11,6 +11,7 @@ export default function ProductsAdverts({ dataUser, styles }) {
             <div className={ styles.DivContainerProductAdverts }>
                 {
                     dataUser && dataUser.productUser.map(({
+                        id,
                         name,
                         image,
                         price,
@@ -18,7 +19,7 @@ export default function ProductsAdverts({ dataUser, styles }) {
                     }) => (
                         <div onClick={() => {
                             const formatName = name.toLowerCase();
-                            router.push(`http://localhost:3000/product-especific/${ formatName.replace(/ /gi, "-") }`)
+                            router.push(`http://localhost:3000/product-especific/${ formatName.replace(/ /gi, "-") }/${ id }`)
                         }} className={ styles.DivProductsAdverts }>
                             <img src={image} alt={ name } />
                             <p>{ name }</p>

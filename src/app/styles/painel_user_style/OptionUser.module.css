@@ -85,6 +85,21 @@
     width: 200px;
 }
 
+.DivContainerWelcome {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.DivContainerWelcome h1 {
+    margin-bottom: 50px;
+}
+
+.DivContainerWelcome img {
+    width: 400px;
+}
+
 /*
     .DivOptionUser {
         border: 1px solid black;

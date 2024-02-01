@@ -29,7 +29,7 @@ export default function OptionUser() {
             <div className={ styles.DivPainelUser }>
                 {
                     option == "Meus dados" ?
-                        <Welcome dataUser={ dataUser } />
+                        <Welcome styles={ styles } dataUser={ dataUser } />
                     : option == "Anunciar" ? 
                         <InputsAdverts styles={ styles } axios={ axios } useState={ useState } dataUser={ dataUser }  setRender={ setRender } />
                     : option == "Produtos anunciados" ? 

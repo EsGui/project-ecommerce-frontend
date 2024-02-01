@@ -8,6 +8,7 @@ export default function Logic({ children }) {
     const [dataUser, setDataUser] = useState(null);
     const [products, setProducts] = useState(null);
     const [render, setRender] = useState(false);
+    const [product, setProduct] = useState(null);
     // Requisição do cadastro
     console.log("Usuário logado ===>>", dataUser);
 
@@ -44,6 +45,8 @@ export default function Logic({ children }) {
         setRender,
         products,
         render,
+        setProduct,
+        product
     }
 
     return (

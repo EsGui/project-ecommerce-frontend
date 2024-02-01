@@ -1,0 +1,41 @@
+.DivContainerCommentsProduct {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.DivTitleCommentsProduct {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.DivInputAskCommentProducts {
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+.DivInputAskCommentProducts > input[type=image] {
+    width: 50px;
+}
+
+
+.DivInputAskCommentProducts input[type=text] {
+    font-size: 25px;
+    margin-right: 20px;
+}
+
+.DivCommentsUserProduct {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.DivArrowDown {
+    transform: rotate(180deg)
+}

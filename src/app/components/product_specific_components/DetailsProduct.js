@@ -9,8 +9,9 @@ export default function DetailsProduct({ slug }) {
     const {
         dataUser,
         setRender,
+        setProduct,
+        product,
     } = useContext(MyContext)
-    const [product, setProduct] = useState(null);
 
     console.log("Produto especifico ===>>>", product)
     console.log("slug ===>>>", slug)
