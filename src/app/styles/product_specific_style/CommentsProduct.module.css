@@ -4,7 +4,8 @@
     align-items: start;
     flex-direction: column;
     width: 60%;
-    margin: 0 auto
+    margin: 0 auto;
+    margin-bottom: 50px;
 }
 
 .DivTitleCommentsProduct {
@@ -87,5 +88,8 @@
     width: 100%;
 }
 
+.DivResponseAsk > p {
+    margin-left: 20px;
+}
 
 

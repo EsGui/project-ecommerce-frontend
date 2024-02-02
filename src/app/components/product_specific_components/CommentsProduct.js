@@ -15,6 +15,7 @@ export default function CommentsProduct({ slug }) {
     console.log("Comment product ====>>", product)
 
     const [comment, setComment] = useState("");
+    const [response, setResponse] = useState("");
     const [toggleResponse, setToggleReponse] = useState(false);
     const [idCompare, setIdCompare] = useState(null)
 
@@ -28,6 +29,18 @@ export default function CommentsProduct({ slug }) {
                 productId: Number(slug[1]),
             }
         })
+    }
+
+    const sendResponseUser = async ({ target: { id } }) => {
+        await axios({
+            url: "http://localhost:3001/register-response-comment",
+            method: "post",
+            data: {
+                response,
+                userId: dataUser.id,
+                commentId: Number(id),
+            }
+        });
     }
 
     return (
@@ -50,7 +63,8 @@ export default function CommentsProduct({ slug }) {
                                 product && product.productComment.map(({
                                     id,
                                     comment,
-                                    commentUser
+                                    commentUser,
+                                    commentResponse,
                                 }) => (
                                     <div>
                                         <div className={ styles.DivUserComment }>
@@ -58,26 +72,33 @@ export default function CommentsProduct({ slug }) {
                                             <p>{ comment }</p>
                                         </div>
                                         <div className={ styles.DivButtonReponseComment }>
-                                            <p>Responder</p>
+                                            <p>Resposta</p>
+                                            <div className={ styles.DivResponseAsk }>
+                                                <p>{ commentResponse && commentResponse.response }</p>
+                                            </div>  
                                             {
-                                                !(toggleResponse && id == idCompare)? (
-                                                    <>
-                                                        <input id={ id } onClick={ ({ target }) => {
-                                                            setIdCompare(target.id)
-                                                            setToggleReponse(true)
-                                                        } } className={ styles.DivArrowUp } src="http://localhost:3000/icons/arrow.png" type="image" />
-                                                    </>
-                                                ) : (
-                                                    <div className={ styles.DivReponseAsk }>
-                                                        <input id={ id } onClick={ ({ target }) => {
-                                                            setIdCompare(target.id)
-                                                            setToggleReponse(false)
-                                                        } } className={ styles.DivArrowDown } src="http://localhost:3000/icons/arrow.png" type="image" />
-                                                        <div className={ styles.DivInputResponseUser }>
-                                                            <input type="text" placeholder="Digite sua resposta" />
-                                                            <input type="image" src="http://localhost:3000/icons/send.png" />
+                                                !commentResponse && dataUser.id == product.userId? (
+                                                    !(toggleResponse && id == idCompare)? (
+                                                        <>
+                                                            <input id={ id } onClick={ ({ target }) => {
+                                                                setIdCompare(target.id)
+                                                                setToggleReponse(true)
+                                                            } } className={ styles.DivArrowUp } src="http://localhost:3000/icons/arrow.png" type="image" />
+                                                        </>
+                                                    ) : (
+                                                        <div className={ styles.DivReponseAsk }>
+                                                            <input id={ id } onClick={ ({ target }) => {
+                                                                setIdCompare(target.id)
+                                                                setToggleReponse(false)
+                                                            } } className={ styles.DivArrowDown } src="http://localhost:3000/icons/arrow.png" type="image" />
+                                                            <div className={ styles.DivInputResponseUser }>
+                                                                <input onChange={ ({ target: { value } }) => setResponse(value) } type="text" placeholder="Digite sua resposta" />
+                                                                <input id={ id } onClick={ sendResponseUser } type="image" src="http://localhost:3000/icons/send.png" />
+                                                            </div>
                                                         </div>
-                                                    </div>
+                                                    )
+                                                ) : (
+                                                    <></>
                                                 )
                                             }
                                         </div>
