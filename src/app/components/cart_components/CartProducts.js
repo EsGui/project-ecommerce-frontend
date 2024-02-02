@@ -1,7 +1,7 @@
 "use client"
 
 import axios from "axios";
-import { useContext, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import styles from '../../styles/cart_style/CartProducts.module.css'
 import MyContext from "@/app/context/MyContext";
 
@@ -10,6 +10,20 @@ export default function CartProducts() {
         dataUser,
         setRender,
     } = useContext(MyContext);
+
+    const [products, setProducts] = useState([]);
+
+    useEffect(() => {
+        const formatCart = () => {
+            const products = dataUser && dataUser.userProductCart.map((data) => ({ ...data, qtd: 1 }))
+            setProducts(products)
+        }
+        formatCart()
+    }, [dataUser]);
+
+    console.log(products);
+
+    console.log(dataUser && dataUser.userProductCart);
 
     const deleteProduct = async (id) => {
         console.log(id);
@@ -30,18 +44,27 @@ export default function CartProducts() {
                     <img src="http://localhost:3000/icons/online-shopping.png" />
                     <h1>Carrinho de compras</h1>
                 </div>
+                <div className={ styles.DivCalcProductsCart }>
+                    <p>R$: { dataUser && dataUser.userProductCart.reduce((current, value) => current + value.price, 0) }</p>
+                </div>
                 <div className={ styles.DivContainerCartProduct }>
                     {
-                        dataUser && dataUser.userProductCart.length > 0 ? dataUser.userProductCart.map(({
+                        products && products.length > 0 ? products.map(({
                             id,
                             name,
                             image,
                             price,
+                            qtd,
+                            total,
                             category
                         }) => (
                             <div className={ styles.DivCartProduct }>
                                 <div className={ styles.DivImageProduct }>
                                     <img src={ image } alt={ name } />
+                                </div>
+                                <div>
+                                    <p>{ qtd }</p>
+                                    <p>{ total }</p>
                                 </div>
                                 <div className={ styles.DivDescriptionProduct }>
                                     <p>{name}</p>
