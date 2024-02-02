@@ -15,7 +15,7 @@ export default function CommentsProduct({ slug }) {
     console.log("Comment product ====>>", product)
 
     const [comment, setComment] = useState("");
-    const [toggleResponse, setToggleReponse] = useState(true);
+    const [toggleResponse, setToggleReponse] = useState(false);
     const [idCompare, setIdCompare] = useState(null)
 
     const sendCommentsUser = async () => {
@@ -45,7 +45,7 @@ export default function CommentsProduct({ slug }) {
                         <div className={ styles.DivCommentsUserProduct }>
                             <h1>Comentários dos usuários</h1>
                         </div>
-                        <div>
+                        <div style={{ width: "100%" }}>
                             {
                                 product && product.productComment.map(({
                                     id,
@@ -54,27 +54,30 @@ export default function CommentsProduct({ slug }) {
                                 }) => (
                                     <div>
                                         <div className={ styles.DivUserComment }>
+                                            <p style={{ fontWeight: "bold" }}>User: { commentUser.userName }</p>
                                             <p>{ comment }</p>
-                                            <p>{ commentUser.userName }</p>
                                         </div>
                                         <div className={ styles.DivButtonReponseComment }>
                                             <p>Responder</p>
                                             {
-                                                !(!toggleResponse && id == idCompare) ? (
-                                                    <input id={ id } onClick={ ({ target }) => {
-                                                        setIdCompare(target.id)
-                                                        setToggleReponse(true)
-                                                    } } className={ styles.DivArrowUp } src="http://localhost:3000/icons/arrow.png" type="image" />
-                                                ) : (!toggleResponse && id == idCompare) ? (
+                                                !(toggleResponse && id == idCompare)? (
                                                     <>
+                                                        <input id={ id } onClick={ ({ target }) => {
+                                                            setIdCompare(target.id)
+                                                            setToggleReponse(true)
+                                                        } } className={ styles.DivArrowUp } src="http://localhost:3000/icons/arrow.png" type="image" />
+                                                    </>
+                                                ) : (
+                                                    <div className={ styles.DivReponseAsk }>
                                                         <input id={ id } onClick={ ({ target }) => {
                                                             setIdCompare(target.id)
                                                             setToggleReponse(false)
                                                         } } className={ styles.DivArrowDown } src="http://localhost:3000/icons/arrow.png" type="image" />
-                                                        <input type="text" placeholder="Digite sua resposta" />
-                                                    </>
-                                                ) : (
-                                                    <></>
+                                                        <div className={ styles.DivInputResponseUser }>
+                                                            <input type="text" placeholder="Digite sua resposta" />
+                                                            <input type="image" src="http://localhost:3000/icons/send.png" />
+                                                        </div>
+                                                    </div>
                                                 )
                                             }
                                         </div>

@@ -1,8 +1,10 @@
 .DivContainerCommentsProduct {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: start;
     flex-direction: column;
+    width: 60%;
+    margin: 0 auto
 }
 
 .DivTitleCommentsProduct {
@@ -11,12 +13,14 @@
     align-items: center;
     flex-direction: column;
     margin-bottom: 20px;
+    width: 100%;
 }
 
 .DivInputAskCommentProducts {
     display: flex;
     justify-content: center;
-    align-items: center
+    align-items: center;
+    width: 100%;
 }
 
 .DivInputAskCommentProducts > input[type=image] {
@@ -27,6 +31,7 @@
 .DivInputAskCommentProducts input[type=text] {
     font-size: 25px;
     margin-right: 20px;
+    width: 100%;
 }
 
 .DivCommentsUserProduct {
@@ -36,6 +41,51 @@
     flex-direction: column;
 }
 
+.DivArrowUp {
+    width: 40px;
+}
+
 .DivArrowDown {
+    width: 40px;
     transform: rotate(180deg)
 }
+
+.DivUserComment {
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.DivNameComments {
+    font-weight: bold
+}
+
+.DivReponseAsk {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 100%;
+}
+
+.DivReponseAsk .DivInputResponseUser > input[type=text] {
+    width: 70%;
+    padding: 5px;
+}
+
+.DivReponseAsk .DivInputResponseUser > input[type=image] {
+    width: 30px;
+}
+
+.DivInputResponseUser {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: 100%;
+}
+
+.DivButtonReponseComment {
+    width: 100%;
+}
+
+
+
