@@ -54,9 +54,30 @@
 }
 
 .DivButtonQtdProductCart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
+.DivButtonQtdProductCart > button {
+    width: 50px;
+    border: none;
+    border-radius: 20px;
+    background: #C56AFD;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.DivButtonQtdProductCart > button,
+.DivButtonQtdProductCart > p {
+    margin: 20px;
 }
 
 .DivButtonQtdProductCart button {
     cursor: pointer
+}
+
+.DivCalcProductsCart p {
+    font-weight: bold;
+    font-size: 30px;
 }

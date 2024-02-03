@@ -74,6 +74,16 @@
     background-color: rgb(245, 245, 245);
 }
 
+.DivProductsAdverts > button {
+    width: 100%;
+    border: none;
+    background-color: rgb(197, 106, 253);
+    color: white;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 20px;
+}
+
 .DivContainerProductAdverts {
     display: flex;
     justify-content: center;

@@ -2,4 +2,11 @@
     background-color: black;
     color: white;
     height: 100px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.DivContainerHomeFooter img {
+    width: 50px;
 }

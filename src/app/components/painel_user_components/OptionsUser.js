@@ -6,7 +6,6 @@ import { useContext, useState } from "react";
 import InputsAdverts from "./sub_components/InputsAdverts";
 import Welcome from "./sub_components/Welcome";
 import ProductsAdverts from "./sub_components/ProductsAdverts";
-import Chat from "./sub_components/Chat";
 import axios from "axios";
 
 export default function OptionUser() {
@@ -23,7 +22,6 @@ export default function OptionUser() {
                     <li onClick={() => setOption("Meus dados")}>Meus dados</li>
                     <li onClick={() => setOption("Anunciar")}>Anunciar</li>
                     <li onClick={() => setOption("Produtos anunciados")}>Produtos Anuciados</li>
-                    <li onClick={() => setOption("chat")}>Chat</li>
                 </ul>
             </div>
             <div className={ styles.DivPainelUser }>
@@ -32,10 +30,8 @@ export default function OptionUser() {
                         <Welcome styles={ styles } dataUser={ dataUser } />
                     : option == "Anunciar" ? 
                         <InputsAdverts styles={ styles } axios={ axios } useState={ useState } dataUser={ dataUser }  setRender={ setRender } />
-                    : option == "Produtos anunciados" ? 
-                        <ProductsAdverts styles={ styles } axios={ axios } useState={ useState } dataUser={ dataUser } setRender={ setRender } />
                     :
-                        <Chat />
+                        <ProductsAdverts styles={ styles } axios={ axios } useState={ useState } dataUser={ dataUser } setRender={ setRender } />
                 }
             </div>
         </div>

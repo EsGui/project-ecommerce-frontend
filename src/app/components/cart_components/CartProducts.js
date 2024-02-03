@@ -66,7 +66,7 @@ export default function CartProducts() {
                     <h1>Carrinho de compras</h1>
                 </div>
                 <div className={ styles.DivCalcProductsCart }>
-                    <p>R$: { calcTotalPrice() }</p>
+                    <p>Valor total R$: { calcTotalPrice() }</p>
                 </div>
                 <div className={ styles.DivContainerCartProduct }>
                     {
@@ -84,10 +84,10 @@ export default function CartProducts() {
                                     <img src={ image } alt={ name } />
                                 </div>
                                 <div className={ styles.DivButtonQtdProductCart }>
-                                    <button onClick={() => incrementProduct(id)} type="button">{ `>` }</button>
-                                    <p>{ quantity }</p>
-                                    <button onClick={() => decrementProduct(id)} type="button">{ `<` }</button>
-                                    <p>{ total }</p>
+                                    <button onClick={() => decrementProduct(id)} type="button">{ `-` }</button>
+                                    <p>Quantidade: { quantity }</p>
+                                    <button onClick={() => incrementProduct(id)} type="button">{ `+` }</button>
+                                    <p>Total: { total }</p>
                                 </div>
                                 <div className={ styles.DivDescriptionProduct }>
                                     <p>{name}</p>
