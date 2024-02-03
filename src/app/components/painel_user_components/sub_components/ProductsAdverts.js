@@ -17,15 +17,18 @@ export default function ProductsAdverts({ dataUser, styles }) {
                         price,
                         description
                     }) => (
-                        <div onClick={() => {
-                            const formatName = name.toLowerCase();
-                            router.push(`http://localhost:3000/product-especific/${ formatName.replace(/ /gi, "-") }/${ id }`)
-                        }} className={ styles.DivProductsAdverts }>
-                            <img src={image} alt={ name } />
-                            <p>{ name }</p>
-                            <p>{ price }</p>
-                            <p>{ description }</p>
-                        </div>
+                        <>
+                            <div className={ styles.DivProductsAdverts }>
+                                <img onClick={() => {
+                                    const formatName = name.toLowerCase();
+                                    router.push(`http://localhost:3000/product-especific/${ formatName.replace(/ /gi, "-") }/${ id }`)
+                                }}  src={image} alt={ name } />
+                                <p>{ name }</p>
+                                <p>{ price }</p>
+                                <p>{ description }</p>
+                                <button type="button">Deletar</button>
+                            </div>
+                        </>
                     ))
                 }
             </div>

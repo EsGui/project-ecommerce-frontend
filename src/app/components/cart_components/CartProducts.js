@@ -11,20 +11,6 @@ export default function CartProducts() {
         setRender,
     } = useContext(MyContext);
 
-    const [products, setProducts] = useState([]);
-
-    useEffect(() => {
-        const formatCart = () => {
-            const products = dataUser && dataUser.userProductCart.map((data) => ({ ...data, qtd: 1 }))
-            setProducts(products)
-        }
-        formatCart()
-    }, [dataUser]);
-
-    console.log(products);
-
-    console.log(dataUser && dataUser.userProductCart);
-
     const deleteProduct = async (id) => {
         console.log(id);
         await axios({
@@ -37,6 +23,41 @@ export default function CartProducts() {
         setRender((prevState) => !prevState)
     }
 
+    const incrementProduct = async (id) => {
+        const product = dataUser && dataUser.userProductCart.findIndex((data) => data.id == id);
+        console.log(dataUser && dataUser.userProductCart[product] + 1)
+        if (dataUser.userProductCart[product].quantity < dataUser.userProductCart[product].total)
+        await axios({
+            url: "http://localhost:3001/update-cart",
+            method: "post",
+            data: {
+                id: Number(id),
+                quantity: dataUser.userProductCart[product].quantity + 1
+            }
+        })
+        setRender((prevState) => !prevState)
+    }
+
+    const decrementProduct = async (id) => {
+        const product = dataUser && dataUser.userProductCart.findIndex((data) => data.id == id);
+        console.log(dataUser && dataUser.userProductCart[product])
+        if (dataUser.userProductCart[product].quantity > 1) {
+            await axios({
+                url: "http://localhost:3001/update-cart",
+                method: "post",
+                data: {
+                    id: Number(id),
+                    quantity: dataUser.userProductCart[product].quantity - 1
+                }
+            })
+        }
+        setRender((prevState) => !prevState)
+    }
+
+    const calcTotalPrice = () => {
+        return dataUser && dataUser.userProductCart.reduce((current, value) => current + (value.price * value.quantity), 0)
+    }
+
     return (
         <>
             <div className={ styles.DivControlCartProduct }>
@@ -45,25 +66,27 @@ export default function CartProducts() {
                     <h1>Carrinho de compras</h1>
                 </div>
                 <div className={ styles.DivCalcProductsCart }>
-                    <p>R$: { dataUser && dataUser.userProductCart.reduce((current, value) => current + value.price, 0) }</p>
+                    <p>R$: { calcTotalPrice() }</p>
                 </div>
                 <div className={ styles.DivContainerCartProduct }>
                     {
-                        products && products.length > 0 ? products.map(({
+                        dataUser && dataUser.userProductCart.length > 0 ? dataUser.userProductCart.map(({
                             id,
                             name,
                             image,
+                            quantity,
                             price,
-                            qtd,
                             total,
                             category
-                        }) => (
-                            <div className={ styles.DivCartProduct }>
+                        }, index) => (
+                            <div key={ index } className={ styles.DivCartProduct }>
                                 <div className={ styles.DivImageProduct }>
                                     <img src={ image } alt={ name } />
                                 </div>
-                                <div>
-                                    <p>{ qtd }</p>
+                                <div className={ styles.DivButtonQtdProductCart }>
+                                    <button onClick={() => incrementProduct(id)} type="button">{ `>` }</button>
+                                    <p>{ quantity }</p>
+                                    <button onClick={() => decrementProduct(id)} type="button">{ `<` }</button>
                                     <p>{ total }</p>
                                 </div>
                                 <div className={ styles.DivDescriptionProduct }>

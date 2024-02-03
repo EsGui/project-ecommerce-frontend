@@ -16,7 +16,6 @@
     justify-content: space-around;
     align-items: center;
     width: 80%;
-    cursor: pointer;
     margin-bottom: 10px;
     margin-top: 10px;
     padding: 20px;
@@ -52,4 +51,12 @@
 
 .DivTitleCart > img {
     width: 50px;
+}
+
+.DivButtonQtdProductCart {
+
+}
+
+.DivButtonQtdProductCart button {
+    cursor: pointer
 }

@@ -27,6 +27,7 @@ export default function DetailsProduct({ slug }) {
                 price: product.price,
                 qtd: product.qtd,
                 total: product.total,
+                quantity: 1,
                 image: product.image,
                 userId: dataUser.id,
                 productId: product.id,
