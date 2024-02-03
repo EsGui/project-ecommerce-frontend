@@ -33,7 +33,7 @@ export default function OptionUser() {
                     : option == "Anunciar" ? 
                         <InputsAdverts styles={ styles } axios={ axios } useState={ useState } dataUser={ dataUser }  setRender={ setRender } />
                     : option == "Produtos anunciados" ? 
-                        <ProductsAdverts styles={ styles } axios={ axios } useState={ useState } dataUser={ dataUser } />
+                        <ProductsAdverts styles={ styles } axios={ axios } useState={ useState } dataUser={ dataUser } setRender={ setRender } />
                     :
                         <Chat />
                 }

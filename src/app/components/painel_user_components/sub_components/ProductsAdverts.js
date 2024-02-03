@@ -2,8 +2,19 @@
 
 import { useRouter } from "next/navigation"
 
-export default function ProductsAdverts({ dataUser, styles }) {
-    const router = useRouter()
+export default function ProductsAdverts({ dataUser, styles, axios, setRender }) {
+    const router = useRouter();
+
+    const deleteProduct = async (id) => {
+        await axios({
+            url: "http://localhost:3001/delete-product",
+            method: "post",
+            data: {
+                id,
+            }
+        });
+        setRender((prevState) => !prevState);
+    }
 
     return (
         <>
@@ -26,7 +37,7 @@ export default function ProductsAdverts({ dataUser, styles }) {
                                 <p>{ name }</p>
                                 <p>{ price }</p>
                                 <p>{ description }</p>
-                                <button type="button">Deletar</button>
+                                <button onClick={ () => deleteProduct(id) } style={{ cursor: "pointer" }} type="button">Deletar</button>
                             </div>
                         </>
                     ))
