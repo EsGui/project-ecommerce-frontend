@@ -6,10 +6,15 @@
     height: 100vh;
 }
 
+.DivMenuBurguer {
+    display: none;
+}
+
 .DivOptionUser,
 .DivPainelUser {
     border: 1px solid black;
     height: 70vh;
+    padding: 20px;
     margin: 0 20px 0 20px;
 }
 
@@ -21,7 +26,6 @@
 .DivOptionUser {
     display: flex;
     justify-content: center;
-    padding: 20px;
     width: 15%
 }
 
@@ -39,10 +43,11 @@
 
 .DivInputs {
     display: flex;
-    justify-content: center;
+    padding: 20px;
     flex-direction: column;
     align-items: center;
     border: 1px solid black;
+    overflow-x: hidden;
     height: 100%;
 }
 
@@ -110,16 +115,61 @@
     width: 400px;
 }
 
-/*
+@media screen and (min-width: 270px) and (max-width: 460px) {
     .DivOptionUser {
-        border: 1px solid black;
-        height: 70vh;
-        padding: 40px
+        display: none;
     }
 
     .DivPainelUser {
-        border: 1px solid black;
-        height: 70vh;
-        padding: 40px
+        width: 100%;
+        height: 100%;
     }
-*/
+
+    .DivContainerWelcome {
+        width: 100%;
+        border: none
+    }
+
+    .DivContainerWelcome > h1 {
+        width: 100%;
+        text-align: center;
+    }
+
+    .DivContainerWelcome > img {
+        width: 200px;
+    }
+
+    .MenuBurguer {
+        width: 30px;
+    }
+
+    .DivMenuBurguer {
+        display: flex;
+        position: absolute;
+        justify-content: center;
+        align-items: flex-start;
+        height: 100%;
+        left: 0;
+        background-color: #C56AFD;
+        padding: 10px;
+    }
+
+    .DivMenuBurguer ul > li {
+        list-style-type: none;
+        padding: 20px;
+        margin-top: 20px;
+        background-color: white;
+        border-radius: 5px
+    }
+
+    .DivInputs {
+        border: none;
+        text-align: center;
+        height: 100%;
+    }
+
+    .DivInputs > input,
+    .DivInputs > button {
+        width: 100%;
+    }
+}

@@ -13,10 +13,39 @@ export default function OptionUser() {
         dataUser,
         setRender
     } = useContext(MyContext);
-    const [option, setOption] = useState("Meus dados")
+    const [option, setOption] = useState("Meus dados");
+    const [toggle, setToggle] = useState(false);
+
+    const toggleMenuBurguer = () => setToggle((prevState) => !prevState)
 
     return (
         <div className={ styles.DivContainerOptionUser }>
+            {/* Menu burguer -> ariefStudio vector icons */}
+            <div className={ styles.DivMenuBurguer }>
+                {
+                    !toggle ? (
+                        <img onClick={ toggleMenuBurguer } className={ styles.MenuBurguer } src="http://localhost:3000/icons/menu.png" alt="ariefstudio burguer" />
+                    ) : (
+                        <div>
+                            <img onClick={ toggleMenuBurguer } className={ styles.MenuBurguer } src="http://localhost:3000/icons/menu.png" alt="ariefstudio burguer" />
+                            <ul>
+                                <li onClick={() => {
+                                    setOption("Meus dados");
+                                    toggleMenuBurguer();
+                                }}>Meus dados</li>
+                                <li onClick={() => {
+                                    setOption("Anunciar");
+                                    toggleMenuBurguer();
+                                }}>Anunciar</li>
+                                <li onClick={() => {
+                                    setOption("Produtos anunciados");
+                                    toggleMenuBurguer();
+                                }}>Produtos Anuciados</li>
+                            </ul>
+                        </div>
+                    )
+                }
+            </div>
             <div className={ styles.DivOptionUser }>
                 <ul>
                     <li onClick={() => setOption("Meus dados")}>Meus dados</li>

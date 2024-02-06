@@ -9,6 +9,9 @@ export default function Slide() {
     const [sCarousel, setSCarousel] = useState(null);
     const [wCarousel, setWCarousel] = useState(null);
 
+    console.log("ref carousel ===>>>", carousel);
+    console.log("width carousel ===>>>", wCarousel);
+
     useEffect(() => {
         setSCarousel(carousel.current)
         setWCarousel(carousel.current.clientWidth);

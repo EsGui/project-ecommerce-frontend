@@ -20,7 +20,7 @@ export default function HomeHeader() {
                 <Link style={{
                     textDecoration: "none",
                     color: "white",
-                }}  href="/"><h3>e-commerce</h3></Link>
+                }}  href="/"><h3>ecommerce</h3></Link>
             </div>
             <div className={ styles.HomeHeaderInput }>
                 <input type="search" placeholder="Pesquisa"/>

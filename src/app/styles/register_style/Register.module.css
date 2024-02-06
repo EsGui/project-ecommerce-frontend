@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh
+    height: 100vh;
 }
 
 .DivRegisterData {
@@ -12,7 +12,7 @@
     flex-direction: column;
     width: 50%;
     height: 90%;
-    border: 1px solid black
+    background-color: rgb(240, 240, 240);
 }
 
 .DivRegisterData input {
@@ -30,4 +30,10 @@
     font-weight: bold;
     font-size: 15px;
     cursor: pointer
+}
+
+@media screen and (min-width: 270px) and (max-width: 460px) {
+    .DivRegisterData {
+        width: 100%;
+    }
 }

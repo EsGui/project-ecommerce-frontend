@@ -24,3 +24,13 @@
     margin: 0 15px 0 15px;
     cursor: pointer;
 }
+
+@media screen and (min-width: 270px) and (max-width: 460px) {
+    .HomeHeaderInput > input[type=search] {
+        display: none;
+    }
+
+    .HomeHeaderImages > img {
+        width: 30px;
+    }
+}
