@@ -25,7 +25,6 @@ export default function CartProducts() {
 
     const incrementProduct = async (id) => {
         const product = dataUser && dataUser.userProductCart.findIndex((data) => data.id == id);
-        console.log(dataUser && dataUser.userProductCart[product] + 1)
         if (dataUser.userProductCart[product].quantity < dataUser.userProductCart[product].total)
         await axios({
             url: "http://localhost:3001/update-cart",

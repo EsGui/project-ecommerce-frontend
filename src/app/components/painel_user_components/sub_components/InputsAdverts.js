@@ -16,11 +16,16 @@ export default function InputsAdverts({ styles, axios, useState, dataUser,  setR
         formData.append("category", category)
         formData.append("userId", dataUser.id)
 
-        await axios.post("http://localhost:3001/register-product", formData, {
-            "headers": {
-                "Content-Type": "multipart/form-data",
-            }
-        })
+        try {
+            const request = await axios.post("http://localhost:3001/register-product", formData, {
+                "headers": {
+                    "Content-Type": "multipart/form-data",
+                }
+            })
+            alert(request.data.message);
+        } catch (error) {
+            alert(error.response.data.message)
+        }
 
         setRender((prevState) => !prevState)
     }

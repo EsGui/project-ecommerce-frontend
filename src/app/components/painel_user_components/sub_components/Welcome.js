@@ -1,4 +1,6 @@
 export default function Welcome({ dataUser, styles }) {
+    console.log(typeof 1);
+
     return (
         <div className={ styles.DivContainerWelcome }>
             {

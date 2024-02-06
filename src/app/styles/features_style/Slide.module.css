@@ -1,11 +1,22 @@
 .SlideContainer {
     display: flex;
     align-items: center;
-    border: 1px solid black;
     width: 50%;
-    overflow-y: hidden;
+    overflow: hidden;
+    height: 550px;
+    scroll-behavior: smooth;
 }
 
-.SlideContainer > img{
-    height: 550px;
+.SlideContainer > img {
+    width: 100%;
+}
+
+.NextStyle {
+    transform: rotate(90deg);
+    width: 100px;
+}
+
+.PreviusStyle {
+    transform: rotate(270deg);
+    width: 100px;
 }

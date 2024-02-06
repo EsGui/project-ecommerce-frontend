@@ -13,11 +13,6 @@ export default function DetailsProduct({ slug }) {
         product,
     } = useContext(MyContext)
 
-    console.log("Produto especifico ===>>>", product)
-    console.log("slug ===>>>", slug)
-
-    // console.log("slug ===>>", slug.replace(/%20/gi, "-"));
-
     const saveProductCart = async () => {
         await axios({
             url: "http://localhost:3001/cart",
@@ -34,7 +29,6 @@ export default function DetailsProduct({ slug }) {
                 category: product.category,
             }
         })
-        console.log("cliquei");
         setRender((prevState) => !prevState);
     }
 

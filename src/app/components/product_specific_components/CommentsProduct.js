@@ -12,8 +12,6 @@ export default function CommentsProduct({ slug }) {
         product,
     } = useContext(MyContext);
 
-    console.log("Comment product ====>>", product)
-
     const [comment, setComment] = useState("");
     const [response, setResponse] = useState("");
     const [toggleResponse, setToggleReponse] = useState(false);
