@@ -2,7 +2,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid black;
     height: 100vh;
 }
 
@@ -12,15 +11,14 @@
 
 .DivOptionUser,
 .DivPainelUser {
-    border: 1px solid black;
     height: 70vh;
     padding: 20px;
-    margin: 0 20px 0 20px;
+    /* Verificar esse margin (Marcando) */
 }
 
 .DivPainelUser {
     width: 50%;
-    padding: 40px;
+    padding: 20px;
 }
 
 .DivOptionUser {
@@ -43,11 +41,8 @@
 
 .DivInputs {
     display: flex;
-    padding: 20px;
     flex-direction: column;
     align-items: center;
-    border: 1px solid black;
-    overflow-x: hidden;
     height: 100%;
 }
 
@@ -57,7 +52,7 @@
     margin-bottom: 40px;
 }
 
-.DivInputs button {
+.button {
     padding: 10px;
     width: 20%;
     border-radius: 5px;
@@ -145,7 +140,6 @@
 
     .DivMenuBurguer {
         display: flex;
-        position: absolute;
         justify-content: center;
         align-items: flex-start;
         height: 100%;
@@ -165,11 +159,11 @@
     .DivInputs {
         border: none;
         text-align: center;
-        height: 100%;
     }
 
     .DivInputs > input,
     .DivInputs > button {
         width: 100%;
+        height: 100%;
     }
 }
