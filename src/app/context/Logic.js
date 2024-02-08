@@ -10,7 +10,7 @@ export default function Logic({ children }) {
     const [render, setRender] = useState(false);
     const [product, setProduct] = useState(null);
     // Requisição do cadastro
-    // console.log("Usuário logado ===>>", dataUser);
+    console.log("Usuário logado ===>>", dataUser);
 
     useEffect(() => {
         const requestUser = async () => {

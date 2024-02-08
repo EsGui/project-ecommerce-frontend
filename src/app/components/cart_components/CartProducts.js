@@ -98,10 +98,10 @@ export default function CartProducts() {
                                 </div>
                             </div>
                         )) : (
-                            <>
-                                <img src="http://localhost:3000/icons/cart-empty.png" />
+                            <div className={ styles.DivEmptyCart }>
+                                <img  src="http://localhost:3000/icons/cart-empty.png" />
                                 <h1>Sem produtos por aqui!</h1>
-                            </>
+                            </div>
                         )
                     }
                 </div>

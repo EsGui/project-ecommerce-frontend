@@ -13,7 +13,6 @@
 .DivPainelUser {
     height: 70vh;
     padding: 20px;
-    /* Verificar esse margin (Marcando) */
 }
 
 .DivPainelUser {
@@ -52,7 +51,7 @@
     margin-bottom: 40px;
 }
 
-.button {
+.DivInputs > button {
     padding: 10px;
     width: 20%;
     border-radius: 5px;
