@@ -79,12 +79,26 @@
     font-size: 30px;
 }
 
-@media screen and (min-width: 270px) and (max-width: 460px) {
+@media screen and (min-width: 270px) and (max-width: 900px) {
     .DivEmptyCart {
         text-align: center;
     }
 
     .DivEmptyCart > img {
         width: 350px;
+    }
+
+    .DivCartProduct {
+        border: 1px solid black;
+        flex-direction: column
+    }
+
+    .DivButtonQtdProductCart {
+        flex-direction: column;
+    }
+
+    .DivButtonQtdProductCart > button,
+    .DivButtonQtdProductCart > p {
+        margin: 5px;
     }
 }
