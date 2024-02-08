@@ -112,6 +112,14 @@
 }
 
 @media screen and (min-width: 270px) and (max-width: 460px) {
+    .DivContainerProductAdverts {
+        padding: 0;
+    }
+
+    .DivProductsAdverts {
+        margin: 0;
+    }
+
     .DivOptionUser {
         display: none;
     }
@@ -119,6 +127,7 @@
     .DivPainelUser {
         width: 100%;
         height: 100%;
+        padding: 5px;
     }
 
     .DivContainerWelcome {
