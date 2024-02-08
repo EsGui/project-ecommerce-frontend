@@ -65,7 +65,6 @@ export default function DetailsProduct({ slug }) {
                             <p>{ product.description }</p>
                         </div>
                         <div className={ styles.DivButton }>
-                            <button type="button">Comprar</button>
                             <button onClick={ saveProductCart } type="button">Adicionar ao carrinho</button>
                             <p>Vendido por: { product.userProduct.userName }</p>
                         </div>        
