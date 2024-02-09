@@ -37,9 +37,4 @@ Para que as funcionalidades do projeto funcionem é preciso fazer o clone do bac
 
 Link: https://github.com/EsGui/project-ecommerce-backend
 
-## Desenvolvimento Contínuo e Aprendizagem
-
-Esse é um projeto de estudos onde estarei sempre desenvolvendo e adicionando funcionalidades novas.
-
-
 
