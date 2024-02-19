@@ -23,8 +23,9 @@
     display: flex;
     justify-content: center;
     width: 20%;
-    padding-top: 20px;
+    padding: 20px;
     border-right: 2px solid black;
+    background-color: rgb(40, 40, 41)
 }
 
 .DivOptionUser ul {
@@ -33,10 +34,11 @@
 
 .DivOptionUser ul li {
     list-style-type: none;
-    padding: 10px;
     margin-bottom: 10px;
     cursor: pointer;
     width: 100%;
+    background-color: rgb(40, 40, 41);
+    color: white;
 }
 
 .DivInputs {

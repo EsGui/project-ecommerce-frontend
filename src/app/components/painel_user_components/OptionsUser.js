@@ -27,8 +27,10 @@ export default function OptionUser() {
         arrayTagsSelect.map((element) => {
             if (element.id == option) {
                 element.style.backgroundColor = "rgb(237,237,237)"
+                element.style.color = "black"
             } else {
-                element.style.backgroundColor = "white"
+                element.style.backgroundColor = "rgb(40, 40, 41)"
+                element.style.color = "white"
             }
         })
     }, [option]);
