@@ -1,16 +1,19 @@
 .SlideContainer {
     display: flex;
     align-items: center;
-    width: 100%;
+    justify-content: center;
+    width: 150vh;
     overflow: hidden;
     height: 550px;
-    border: 1px solid black;
     scroll-behavior: smooth;
 }
 
-.SlideContainer > img {
-    width: 100vh;
-    height: 100%
+.DivImageSlide img {
+}
+
+.DivImageSlide {
+    width: 100%;
+    border: 1px solid black;
 }
 
 .NextStyle {

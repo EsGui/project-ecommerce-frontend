@@ -36,6 +36,7 @@
     list-style-type: none;
     margin-bottom: 10px;
     cursor: pointer;
+    padding: 5px;
     width: 100%;
     background-color: rgb(40, 40, 41);
     color: white;
