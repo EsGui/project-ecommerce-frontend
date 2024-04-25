@@ -1,0 +1,27 @@
+.DivContainerCarousel  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+}
+
+.DivSubContainerCarousel {
+    display: flex;
+    overflow-x: hidden;
+    width: 80%;
+    height: 600px;
+}
+
+.ImagensCarrossel {
+    width: 100%;
+    /* flex: 0 1 auto; */
+    flex-shrink: 0;
+}
+
+.ButtonPrevious {
+    cursor: pointer;
+}
+
+.ButtonNext {
+    cursor: pointer;
+}
