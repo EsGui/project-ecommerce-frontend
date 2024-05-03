@@ -3,16 +3,32 @@
 import Link from 'next/link'
 import styles from '../../styles/home_style/HomeHeader.module.css'
 import { useRouter } from 'next/navigation'
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 import MyContext from '@/app/context/MyContext'
+import axios from 'axios'
 
 export default function HomeHeader() {
     const {
         dataUser,
         setRender,
+        searchProduct, 
+        setSearchProduct
     } = useContext(MyContext);
 
-    const router = useRouter()
+    const [textInput, setTextInput] = useState("");
+
+    console.log(searchProduct)
+
+    const router = useRouter();
+
+    const inputSearchProductClick = async () => {
+        if (textInput.length > 0) {
+            const request = await axios.post("http://localhost:3001/search-product", { nameProduct: textInput });
+            setSearchProduct(request.data);
+        }
+
+        console.log(searchProduct);
+    }
 
     return (
         <div className={ styles.HomeHeaderContainer }>
@@ -23,7 +39,8 @@ export default function HomeHeader() {
                 }}  href="/"><h3>ecommerce</h3></Link>
             </div>
             <div className={ styles.HomeHeaderInput }>
-                <input type="search" placeholder="Pesquisa"/>
+                <input onChange={({ target }) => setTextInput(target.value)} type="search" placeholder="Pesquisa"/>
+                <button type="button" onClick={inputSearchProductClick}>Pesquisa</button>
             </div>
             <div className={ styles.HomeHeaderImages }>
                 <img onClick={ () => {
