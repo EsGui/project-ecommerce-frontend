@@ -23,6 +23,7 @@ export default function Carousel() {
         slide();
     }, [position]);
 
+    /*
     useEffect(() => {
         const loop = setInterval(() => {
             const listTags = refDivSubContainer.current.childNodes;
@@ -37,6 +38,7 @@ export default function Carousel() {
             clearInterval(loop);
         }
     })
+    */
 
     const next = () => {
         const listTags = refDivSubContainer.current.childNodes;
