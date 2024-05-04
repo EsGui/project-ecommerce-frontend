@@ -2,7 +2,7 @@
 
 ## Descrição do projeto
 
-Esse é um projeto fictício para estudos que simula um e-commerce com algumas funcionalidades. E-commerce ou comércio eletrônico é um site de vendas onde pessoas podem vender e comprar produtos.
+Esse é um projeto de estudos que simula um e-commerce com algumas funcionalidades. E-commerce ou comércio eletrônico é um site de vendas onde pessoas podem vender e comprar produtos.
 
 ## Funcionalidades
 - Login
@@ -13,7 +13,15 @@ Esse é um projeto fictício para estudos que simula um e-commerce com algumas f
 
 ## Tecnologias utilizadas no front-end
 - reactjs/nextjs
+    - Framework utilizado para desenvolver o frontend.
 - axios
+    - Bibliotecas para fazer requisições get e post.
+
+## Pré-requisitos para rodar o projeto
+É preciso ter instalado:
+- Nodejs
+- Git
+- VS code
 
 ## Instalação do projeto
 ```

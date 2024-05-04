@@ -12,10 +12,11 @@ export default function LoginUser() {
         setRender
     } = useContext(MyContext);
 
-    const [email, setEmail] = useState("");
+    const [email, setEmail] = useState(""); 
     const [password, setPassword] = useState("");
     const router = useRouter();
 
+    // Função para autenticação de usuário.
     const authUser = async () => {
         await axios({
             method: 'post',
@@ -25,7 +26,7 @@ export default function LoginUser() {
                 password,
             }
         }).then((response) => {
-            setRender((prevState) => !prevState)
+            setRender((prevState) => !prevState);
             localStorage.setItem("tokenUser", response.data.token)
             router.push("/");
         })
