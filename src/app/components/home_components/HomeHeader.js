@@ -11,23 +11,18 @@ export default function HomeHeader() {
     const {
         dataUser,
         setRender,
-        searchProduct, 
-        setSearchProduct
     } = useContext(MyContext);
 
     const [textInput, setTextInput] = useState("");
 
-    console.log(searchProduct)
-
     const router = useRouter();
 
-    const inputSearchProductClick = async () => {
-        if (textInput.length > 0) {
-            const request = await axios.post("http://localhost:3001/search-product", { nameProduct: textInput });
-            setSearchProduct(request.data);
-        }
+    console.log(typeof textInput);
 
-        console.log(searchProduct);
+    const inputSearchProductClick = async () => {
+        if (textInput.length > 0 && (textInput)) {
+            router.push(`/search/${ textInput.replace(' ', 'produto-nao-encontrado') }`);
+        }
     }
 
     return (
@@ -40,7 +35,7 @@ export default function HomeHeader() {
             </div>
             <div className={ styles.HomeHeaderInput }>
                 <input onChange={({ target }) => setTextInput(target.value)} type="search" placeholder="Pesquisa"/>
-                <button type="button" onClick={inputSearchProductClick}>Pesquisa</button>
+                <button type="button" onClick={inputSearchProductClick}><img src="http://localhost:3000/icons/magnifying-glass.png" /></button>
             </div>
             <div className={ styles.HomeHeaderImages }>
                 <img onClick={ () => {

@@ -9,7 +9,7 @@ export default function Logic({ children }) {
     const [products, setProducts] = useState(null);
     const [render, setRender] = useState(false);
     const [product, setProduct] = useState(null);
-    const [searchProduct, setSearchProduct] = useState({})
+    const [searchProduct, setSearchProduct] = useState([])
     
     // Requisição do cadastro
     useEffect(() => {
