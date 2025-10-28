@@ -45,8 +45,8 @@ export default function DetailsProduct({ slug }) {
                         slug: slug[0]
                     }
                 }).then((response) => {
-                    setProduct(response.data)
-                    console.log("testando aqui =====>>>>", response.data)
+                    setProduct(response.data.message)
+                    console.log("testando aqui =====>>>>", response.data.message)
                 })
                 .catch((error) => {
                     console.log(error.response.data.error);
