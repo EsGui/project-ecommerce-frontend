@@ -37,7 +37,7 @@ export default function Logic({ children }) {
     useEffect(() => {
         const requestProducts = async () => {
             await axios("http://localhost:3001/list-product")
-            .then((response) => setProducts(response.data.products))
+            .then((response) => setProducts(response.data.message))
             .catch((error) => console.log(error));
         }
         requestProducts();

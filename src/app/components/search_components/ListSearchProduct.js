@@ -16,6 +16,7 @@ export default function ListSearchProduct({ slug }) {
     useEffect(() => {
         (async() => {
             const request = await axios.post("http://localhost:3001/search-product", { nameProduct: slug });
+            console.log("Aquiiiii ======>>>>>>", request.data)
             setSearchProduct(request.data);
         })()
     }, []);
