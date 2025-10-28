@@ -22,7 +22,10 @@ export default function Logic({ children }) {
                     headers: {
                         authorization: token,
                     }
-                }).then((response) => setDataUser(response.data))
+                }).then((response) => {
+                    console.log("Usuário ====>>>>", response)
+                    setDataUser(response.data.message)
+                })
                 .catch((error) => console.error(error));
             } else {
                 setDataUser(null)

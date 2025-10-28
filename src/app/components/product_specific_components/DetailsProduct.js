@@ -13,6 +13,8 @@ export default function DetailsProduct({ slug }) {
         product,
     } = useContext(MyContext)
 
+    console.log("Produto aqui ====>>>>", product)
+
     const saveProductCart = async () => {
         await axios({
             url: "http://localhost:3001/cart",
@@ -42,7 +44,10 @@ export default function DetailsProduct({ slug }) {
                         id: Number(slug[1]),
                         slug: slug[0]
                     }
-                }).then((response) => setProduct(response.data.product))
+                }).then((response) => {
+                    setProduct(response.data)
+                    console.log("testando aqui =====>>>>", response.data)
+                })
                 .catch((error) => {
                     console.log(error.response.data.error);
                 })

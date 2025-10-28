@@ -22,6 +22,7 @@ export default function InputsAdverts({ styles, axios, useState, dataUser,  setR
                     "Content-Type": "multipart/form-data",
                 }
             })
+            console.log(request.data)
             alert(request.data.message);
         } catch (error) {
             alert(error.response.data.message)
@@ -35,7 +36,6 @@ export default function InputsAdverts({ styles, axios, useState, dataUser,  setR
             <h1>Cadastrar Produto</h1>
             <input onChange={({ target }) => setName(target.value)} type="text" placeholder="Nome do produto" />
             <input onChange={({ target }) => setPrice(target.value)} type="text" placeholder="Preço" />
-            {/* <input onChange={({ target }) => setImage(target.value)} type="text" placeholder="Image" /> */}
             <input onChange={({ target }) => setTotal(target.value)} type="text" placeholder="Quantidade de produtos" />
             <input onChange={({ target }) => setDescription(target.value)} type="text" placeholder="Description" />
             <input onChange={({ target }) => setCategory(target.value)} type="text" placeholder="Categoria" />

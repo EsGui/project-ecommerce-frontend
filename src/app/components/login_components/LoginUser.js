@@ -27,7 +27,7 @@ export default function LoginUser() {
             }
         }).then((response) => {
             setRender((prevState) => !prevState);
-            localStorage.setItem("tokenUser", response.data.token)
+            localStorage.setItem("tokenUser", response.data.message.token)
             router.push("/");
         })
         .catch((error) => alert(error.response.data.message));
