@@ -1,3 +1,5 @@
+# Projeto descontinuado, refatoração em andamento...
+
 # E-commerce (front-end)
 
 ## Descrição do projeto
